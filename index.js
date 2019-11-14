@@ -98,12 +98,12 @@ class Lambdasian {
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
-class Instructor extends Lambdasian {
+class Instructor extends Lambdasian{
  constructor(attr){
-   super(attr);
+   super();
    this.specialty = attr.specialty,
    this.favLanguage = attr.favLanguage,
-   this.catchPhrase - attr.catchPhrase
+   this.catchPhrase = attr.catchPhrase
   }
   demo(subject){
   return `Today we are learning about ${subject}`
@@ -144,10 +144,20 @@ class Student {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
-
+class ProjectManager extends Instructor{
+  constructor(attr){
+    super(attr);
+    this.gradClassName = attr.gradClassName
+    this.favInstructor = attr.favInstructor
+  
+  }
+  standUp(channel){
+  return `${channel.name} announces to ${channel}, @channel standy times!`;
 }
-
+debugsCode(student, subject){
+  return `${student.name} debugs ${student.name} code on ${student} `;
+}  
+}
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
